@@ -1,0 +1,27 @@
+# PostgreSQL Configuration
+# Using docker/docker credentials for local development
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV["RDS_USERNAME"] || 'docker' %>
+  password: <%= ENV["RDS_PASSWORD"] || 'docker'%>
+  host: localhost
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: autocomplete_development
+
+test:
+  <<: *default
+  database: autocomplete_test
+
+production:
+  <<: *default
+  database: autocomplete_production
+  username: <%= ENV.fetch("DATABASE_USERNAME", "docker") %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD", "docker") %>
+  host: <%= ENV.fetch("DATABASE_HOST", "localhost") %>
+  port: <%= ENV.fetch("DATABASE_PORT", "5432") %>

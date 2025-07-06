@@ -1,0 +1,174 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - db/seeds/*
+    - node_modules/**/*
+    - public/system/pictures/**/*
+    - storage/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**/*
+    - db/schema.rb
+    - db/migrate/**/*
+    - config/**/*
+  TargetRubyVersion: 3.2.3
+
+#################### Metrics ###############################
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 500
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 800
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
+
+Metrics/ClassLength:
+  Enabled: false
+
+#################### Style ###############################
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/GuardClause:
+  MinBodyLength: 3
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+
+Style/RedundantPercentQ:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: true
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/*_helper.rb'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/SymbolProc:
+  Enabled: false
+
+Style/AccessorGrouping:
+  Enabled: false
+
+#################### Layout ###############################
+
+Layout/LineLength:
+  Max: 256
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  IgnoreCopDirectives: false
+  IgnoredPatterns: [ '^#[ ]{2}.+' ]
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines_except_namespace
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: empty_lines_except_namespace
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyleForEmptyBraces: no_space
+
+Layout/TrailingWhitespace:
+  Enabled: true
+  AllowInHeredoc: false
+
+#################### Rails ###############################
+
+Rails:
+  Enabled: true
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/ActiveRecordAliases:
+  Enabled: true
+
+Rails/FindBy:
+  Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: true
+
+Rails/ContentTag:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/ScopeArgs:
+  Enabled: false
+
+#################### RSpec ###############################
+
+RSpec:
+  Enabled: false
+
+RSpec/Focus:
+  Enabled: true
+
+#################### Miscellaneous ###############################
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
