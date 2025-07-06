@@ -1,4 +1,5 @@
 class SuggestionsController < ApplicationController
+
   def index
     # This should ONLY render the HTML page, no JSON logic
     render :index
@@ -18,9 +19,10 @@ class SuggestionsController < ApplicationController
   end
 
   def stats
-    render json: { 
+    render json: {
       word_count: $trie.word_count,
       total_words: $trie.total_words
     }
   end
+
 end

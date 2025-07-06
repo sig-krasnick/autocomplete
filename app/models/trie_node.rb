@@ -1,4 +1,5 @@
 class TrieNode
+
   attr_accessor :children, :is_end_of_word, :value
 
   def initialize
@@ -14,4 +15,5 @@ class TrieNode
   def has_children?
     !@children.empty?
   end
+
 end

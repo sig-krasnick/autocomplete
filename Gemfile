@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Gemfile
 #
 # Gem dependencies for Rails Application
