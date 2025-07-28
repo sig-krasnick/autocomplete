@@ -9,7 +9,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.3'
 
 # Core Rails gems
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.6'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.2.0'
 
